@@ -1,5 +1,7 @@
 package com.company;
 
+import com.sun.java.util.jar.pack.Instruction;
+
 import java.util.Scanner;
 
 public class ZooDemo {
@@ -9,13 +11,53 @@ public class ZooDemo {
         Scanner key = new Scanner(System.in);
         Zoo welcomeToZoo = new Zoo();
         //should probably separate here for add pen function so can add new pens to same zoo above
-        System.out.println("What would you like to name your new pen?");
-        String penName = key.nextLine();
 
-        Pen newPen = new Pen(penName);
+        // break point before copy
+        boolean menuLoop = true;
 
-        welcomeToZoo.addPenToZoo(newPen);
-        welcomeToZoo.printDetails();
+        System.out.println("Welcome to the Zoo! \n" +
+                "Owned and Operated by Billy McFarland");
+
+        do {
+            System.out.println("Please choose an option \n" +
+                    "1) Add or Remove a Pen \n" +
+                    "2) Add or Remove an Animal \n" +
+                    "3) See all Animals in the Zoo \n" +
+                    "3) See all Animals in a particular Pen \n" +
+                    "4) Leave Zoo");
+
+            int userOption = key.nextInt();
+            switch (userOption) {
+                case 1:
+                    System.out.println("Would you like to Add or Remove a Pen?");
+                    System.out.println("1) Add Pen \n2) Remove Pen");
+                    int addOrRemoveOption = key.nextInt();
+                    switch (addOrRemoveOption){
+                        case 1:
+                            System.out.println("What would you like to name your new pen?");
+                            String penName = key.nextLine();
+                            Pen newPen = new Pen(penName);
+                            welcomeToZoo.addPenToZoo(newPen);
+                            break;
+                        case 2:
+                            System.out.println("Enter the name of the pen you would like to remove.");
+                            String searchPenName = key.nextLine();
+                            if 
+                            break;
+                    }
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    menuLoop = false;
+                default:
+                    System.out.println("Invalid response");
+                    break;
+            }
+
+        } while (menuLoop);
 
     }
 }
