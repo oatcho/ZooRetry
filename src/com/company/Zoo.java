@@ -61,18 +61,19 @@ public class Zoo extends Pen {
         }
     }
 
-    public void searchForPenAndAddAnimal(){
+    public void searchForPenAndAddAnimal() {
         System.out.println("Would you like to Add or Remove an Animal?");
-                    System.out.println("1) Add Animal\n 2) Remove Animal");
-                    int addOrRemoveAnimalOption = key.nextInt();
-                    switch (addOrRemoveAnimalOption){
-                        case 1:
+        System.out.println("1) Add Animal\n 2) Remove Animal");
+        int addOrRemoveAnimalOption = key.nextInt();
+        switch (addOrRemoveAnimalOption) {
+            case 1:
 
-                            break;
-                        case 2:
-                            break;
-                        default:
-                            break;
+                break;
+            case 2:
+                break;
+            default:
+                break;
+        }
     }
 
 }
