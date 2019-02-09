@@ -1,6 +1,6 @@
 package com.company;
 
-import com.sun.java.util.jar.pack.Instruction;
+//import com.sun.java.util.jar.pack.Instruction;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class ZooDemo {
                     "1) Add or Remove a Pen \n" +
                     "2) Add or Remove an Animal \n" +
                     "3) See all Animals in the Zoo \n" +
-                    "3) See all Animals in a particular Pen \n" +
+                    "3) See all Animals in a Pen \n" +
                     "4) Leave Zoo");
 
             int userOption = key.nextInt();
@@ -35,18 +35,18 @@ public class ZooDemo {
                     switch (addOrRemoveOption){
                         case 1:
                             System.out.println("What would you like to name your new pen?");
+                            key.nextLine();
                             String penName = key.nextLine();
                             Pen newPen = new Pen(penName);
                             welcomeToZoo.addPenToZoo(newPen);
                             break;
                         case 2:
-                            System.out.println("Enter the name of the pen you would like to remove.");
-                            String searchPenName = key.nextLine();
-                            if 
+                            welcomeToZoo.searchForPen();
                             break;
                     }
                     break;
                 case 2:
+
                     break;
                 case 3:
                     break;

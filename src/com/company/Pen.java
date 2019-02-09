@@ -24,6 +24,14 @@ public class Pen {
 
     }
 
+    public String getPenName() {
+        return penName;
+    }
+
+    public void setPenName(String penName) {
+        this.penName = penName;
+    }
+
     public ArrayList<Animal> getListOfAnimals() {
         return listOfAnimals;
     }
