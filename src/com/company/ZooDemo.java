@@ -43,10 +43,24 @@ public class ZooDemo {
                         case 2:
                             welcomeToZoo.searchForPen();
                             break;
+                        default:
+                            System.out.println("Invalid Response");
                     }
                     break;
                 case 2:
-
+//                    System.out.println("Would you like to Add or Remove an Animal?");
+//                    System.out.println("1) Add Animal\n 2) Remove Animal");
+//                    int addOrRemoveAnimalOption = key.nextInt();
+//                    switch (addOrRemoveAnimalOption){
+//                        case 1:
+//
+//                            break;
+//                        case 2:
+//                            break;
+//                        default:
+//                            break;
+                    welcomeToZoo.searchForPenAndAddAnimal();
+                    }
                     break;
                 case 3:
                     break;
