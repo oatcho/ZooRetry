@@ -38,6 +38,19 @@ public class Zoo extends Pen {
         }
     }
 
+    public void printDetailsInZoo(){
+        Scanner key = new Scanner(System.in);
+        System.out.println("What Pen would you like to see?");
+        String penIWantPrinted = key.nextLine();
+        for (int i = 0; i < zooArray.size(); i++){
+            if (zooArray.get(i).getPenName().equalsIgnoreCase(penIWantPrinted)) {
+                System.out.println(zooArray.get(i).listOfAnimals);
+                System.out.println(zooArray.get(i).listOfBabyAnimals);
+
+            }
+        }
+    }
+
     public void searchForPen(){
         Scanner searchScanner = new Scanner(System.in);
         System.out.println("Enter the name of the pen you would like to remove.");
@@ -139,40 +152,63 @@ public class Zoo extends Pen {
                     BabyAnimal newBabyAnimalObject = new BabyAnimal(species, size, gender, birthDate);
                     System.out.println("What's the name of the Pen you would like to add this Baby Animal to?");
                     String nameOfPenIWannaAddTo = key.nextLine();
-                    boolean penFound = false;
+                    boolean penFound3 = false;
                     for (int i = 0; i < zooArray.size(); i++) {
                         if (zooArray.get(i).getPenName().equalsIgnoreCase(nameOfPenIWannaAddTo)) {
-                            penFound = true;
+                            penFound3 = true;
                             listOfAnimals.add(newBabyAnimalObject);
                         } else {
-                            penFound = false;
+                            penFound3 = false;
                         }
                     }
-                    if (!penFound) {
+                    if (!penFound3) {
                         System.out.println("That pen doesn't exist.");
                     }
                     break;
                 case 2:
+//                    System.out.println("In what Pen does this Baby Animal reside?");
+//                    key.nextLine();
+//                    String penBabyAnimalLivesIn = key.nextLine();
+//                    boolean penFound4 = false;
+//                    for (int i = 0; i < zooArray.size(); i++) {
+//                        if(zooArray.get(i).getPenName().equalsIgnoreCase(penBabyAnimalLivesIn)) {
+//                            penFound4 = true;
+//                            System.out.println("What is the species of Baby Animal would you like to remove?");
+//                            String speciesOfBabyAnimalIWantToRemove = key.nextLine();
+//                            for (int j = 0; j < listOfBabyAnimals.size(); j++) {
+//                                if(listOfBabyAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfBabyAnimalIWantToRemove)){
+//                                    listOfBabyAnimals.remove(j);
+//                                }
+//                                else {
+//                                    penFound4 = false;
+//                                }
+//                            }
+//                        }
+//                    }
+//                    if (!penFound4) {
+//                        System.out.println("That pen doesn't exist.");
+//                    }
+//                    break;
                     System.out.println("In what Pen does this Baby Animal reside?");
                     key.nextLine();
                     String penBabyAnimalLivesIn = key.nextLine();
-                    boolean penFound3 = false;
+                    boolean penFound4 = false;
                     for (int i = 0; i < zooArray.size(); i++) {
                         if(zooArray.get(i).getPenName().equalsIgnoreCase(penBabyAnimalLivesIn)) {
-                            penFound3 = true;
-                            System.out.println("What is the species of Baby Animal would you like to remove?");
+                            penFound4 = true;
+                            System.out.println("What is the species of Animal would you like to remove?");
                             String speciesOfBabyAnimalIWantToRemove = key.nextLine();
-                            for (int j = 0; j < listOfBabyAnimals.size(); j++) {
-                                if(listOfBabyAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfBabyAnimalIWantToRemove)){
-                                    listOfBabyAnimals.remove(j);
+                            for (int j = 0; j < listOfAnimals.size(); j++) {
+                                if(listOfAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfBabyAnimalIWantToRemove)){
+                                    listOfAnimals.remove(j);
                                 }
                                 else {
-                                    penFound3 = false;
+                                    penFound4 = false;
                                 }
                             }
                         }
                     }
-                    if (!penFound3) {
+                    if (!penFound4) {
                         System.out.println("That pen doesn't exist.");
                     }
                     break;

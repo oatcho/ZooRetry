@@ -66,6 +66,7 @@ public class ZooDemo {
                     welcomeToZoo.printDetailsInPen();
                     break;
                 case 4:
+                    welcomeToZoo.printDetailsInZoo();
                     break;
                 case 5:
                     menuLoop = false;

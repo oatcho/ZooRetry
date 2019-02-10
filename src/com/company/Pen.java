@@ -24,6 +24,14 @@ public class Pen {
 
     }
 
+    @Override
+    public String toString() {
+        return "Pen{" +
+                "Collection of Animals:'" + listOfAnimals + '\'' +
+                ", Collection of Baby Animals:'" + listOfBabyAnimals + '\'' +
+                '}';
+    }
+
     public String getPenName() {
         return penName;
     }
