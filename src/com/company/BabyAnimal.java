@@ -12,6 +12,16 @@ public class BabyAnimal extends Animal {
 
     }
 
+    @Override
+    public String toString() {
+        return "Baby Animals{" +
+                "species='" + species + '\'' +
+                ", size='" + size + '\'' +
+                ", gender='" + gender + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                '}';
+    }
+
     public String getBirthDate() {
         return birthDate;
     }

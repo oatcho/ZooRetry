@@ -66,41 +66,98 @@ public class Zoo extends Pen {
         System.out.println("Would you like to Add or Remove an Animal or a BabyAnimal?");
         System.out.println("1) Animal\n 2) BabyAnimal");
         int animalOrBabyAnimal = key.nextInt();
-        if (animalOrBabyAnimal == 1){
-            System.out.println("Would you like to Add or Remove an Animal?\n 1) Add Animal to a Pen \n 2) Remove Animal from Pen");
-        int addOrRemoveAnimalOption = key.nextInt();
-        switch (addOrRemoveAnimalOption) {
-            case 1:
-                System.out.println("Please enter the Animal's Species: ");
-                key.nextLine();
-                String species = key.nextLine();
-                System.out.println("How large is the Animal?");
-                String size = key.nextLine();
-                System.out.println("Is this Animal a male or female?");
-                String gender = key.nextLine();
-                Animal newAnimalObject = new Animal(species, size, gender);
-                System.out.println("What's the name of the Pen you would like to add this animal to?");
-                String nameOfPenIWannaAddTo = key.nextLine();
-                boolean penFound = false;
-                for (int i = 0; i < zooArray.size(); i++) {
-                    if (zooArray.get(i).getPenName().equalsIgnoreCase(nameOfPenIWannaAddTo)) {
-                        penFound = true;
+        if (animalOrBabyAnimal == 1) {
+            System.out.println("Would you like to Add or Remove an Animal?\n 1) Add Animal to a Pen \n 2) Remove Animal from Pen \n*Hit any key to Exit Menu");
+            int addOrRemoveAnimalOption = key.nextInt();
+            switch (addOrRemoveAnimalOption) {
+                case 1:
+                    System.out.println("Please enter the Animal's Species: ");
+                    key.nextLine();
+                    String species = key.nextLine();
+                    System.out.println("How large is the Animal?");
+                    String size = key.nextLine();
+                    System.out.println("Is this Animal a male or female?");
+                    String gender = key.nextLine();
+                    Animal newAnimalObject = new Animal(species, size, gender);
+                    System.out.println("What's the name of the Pen you would like to add this animal to?");
+                    String nameOfPenIWannaAddTo = key.nextLine();
+                    boolean penFound = false;
+                    for (int i = 0; i < zooArray.size(); i++) {
+                        if (zooArray.get(i).getPenName().equalsIgnoreCase(nameOfPenIWannaAddTo)) {
+                            penFound = true;
                             listOfAnimals.add(newAnimalObject);
                         } else {
                             penFound = false;
                         }
                     }
-                if (!penFound) {
-                    System.out.println("That pen doesn't exist.");
+                    if (!penFound) {
+                        System.out.println("That pen doesn't exist.");
+                    }
+                    break;
+                case 2:
+                    System.out.println("In what Pen does this Animal reside?");
+                    key.nextLine();
+                    String penAnimalLivesIn = key.nextLine();
+                    boolean penFound2 = false;
+                    for (int i = 0; i < zooArray.size(); i++) {
+                        if(zooArray.get(i).getPenName().equalsIgnoreCase(penAnimalLivesIn)) {
+                            penFound2 = true;
+                            System.out.println("What is the species of Animal would you like to remove?");
+                            String speciesOfAnimalIWantToRemove = key.nextLine();
+                            for (int j = 0; j < listOfAnimals.size(); j++) {
+                                if(listOfAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfAnimalIWantToRemove)){
+                                    listOfBabyAnimals.remove(j);
+                                }
+                                else {
+                                    penFound2 = false;
+                                }
+                            }
+                        }
                 }
-                break;
-            case 2:
-                break;
-//            default:
-//                break;
-        }
-        } else if(animalOrBabyAnimal == 2){
+                    if (!penFound2) {
+                        System.out.println("That pen doesn't exist.");
+                    }
+                    break;
+                default:
+                    break;
+            }
+        } else if (animalOrBabyAnimal == 2) {
             //copy and paste animal stuff
+            System.out.println("Would you like to Add or Remove a Baby Animal?\n 1) Add Baby Animal to a Pen \n 2) Remove Baby Animal from Pen \n*Hit any key to Exit Menu");
+            int addOrRemoveAnimalOption = key.nextInt();
+            switch (addOrRemoveAnimalOption) {
+                case 1:
+                    System.out.println("Please enter the Baby Animal's Species: ");
+                    key.nextLine();
+                    String species = key.nextLine();
+                    System.out.println("How large is the Baby Animal?");
+                    String size = key.nextLine();
+                    System.out.println("Is this Baby Animal a male or female?");
+                    String gender = key.nextLine();
+                    System.out.println("On what day was this Baby Animal born?");
+                    String birthDate = key.nextLine();
+                    BabyAnimal newBabyAnimalObject = new BabyAnimal(species, size, gender, birthDate);
+                    System.out.println("What's the name of the Pen you would like to add this Baby Animal to?");
+                    String nameOfPenIWannaAddTo = key.nextLine();
+                    boolean penFound = false;
+                    for (int i = 0; i < zooArray.size(); i++) {
+                        if (zooArray.get(i).getPenName().equalsIgnoreCase(nameOfPenIWannaAddTo)) {
+                            penFound = true;
+                            listOfAnimals.add(newBabyAnimalObject);
+                        } else {
+                            penFound = false;
+                        }
+                    }
+                    if (!penFound) {
+                        System.out.println("That pen doesn't exist.");
+                    }
+                    break;
+                case 2:
+                    break;
+                default:
+                    break;
+
+            }
         }
     }
 

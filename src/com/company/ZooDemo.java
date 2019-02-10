@@ -23,8 +23,8 @@ public class ZooDemo {
                     "1) Add or Remove a Pen \n" +
                     "2) Add or Remove an Animal \n" +
                     "3) See all Animals in the Zoo \n" +
-                    "3) See all Animals in a Pen \n" +
-                    "4) Leave Zoo");
+                    "4) See all Animals in a Pen \n" +
+                    "5) Leave Zoo");
 
             int userOption = key.nextInt();
             switch (userOption) {
@@ -66,6 +66,8 @@ public class ZooDemo {
                     welcomeToZoo.printDetailsInPen();
                     break;
                 case 4:
+                    break;
+                case 5:
                     menuLoop = false;
                 default:
                     System.out.println("Invalid response");
