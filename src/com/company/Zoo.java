@@ -106,7 +106,7 @@ public class Zoo extends Pen {
                             String speciesOfAnimalIWantToRemove = key.nextLine();
                             for (int j = 0; j < listOfAnimals.size(); j++) {
                                 if(listOfAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfAnimalIWantToRemove)){
-                                    listOfBabyAnimals.remove(j);
+                                    listOfAnimals.remove(j);
                                 }
                                 else {
                                     penFound2 = false;
@@ -153,6 +153,28 @@ public class Zoo extends Pen {
                     }
                     break;
                 case 2:
+                    System.out.println("In what Pen does this Baby Animal reside?");
+                    key.nextLine();
+                    String penBabyAnimalLivesIn = key.nextLine();
+                    boolean penFound3 = false;
+                    for (int i = 0; i < zooArray.size(); i++) {
+                        if(zooArray.get(i).getPenName().equalsIgnoreCase(penBabyAnimalLivesIn)) {
+                            penFound3 = true;
+                            System.out.println("What is the species of Baby Animal would you like to remove?");
+                            String speciesOfBabyAnimalIWantToRemove = key.nextLine();
+                            for (int j = 0; j < listOfBabyAnimals.size(); j++) {
+                                if(listOfBabyAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfBabyAnimalIWantToRemove)){
+                                    listOfBabyAnimals.remove(j);
+                                }
+                                else {
+                                    penFound3 = false;
+                                }
+                            }
+                        }
+                    }
+                    if (!penFound3) {
+                        System.out.println("That pen doesn't exist.");
+                    }
                     break;
                 default:
                     break;
