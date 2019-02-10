@@ -45,6 +45,14 @@ public class Pen {
         }
     }
 
+    public void printDetailsInPen2(){
+        for(int i = 0; i < listOfAnimals.size(); i++) {
+            for(int j = 0; j < listOfBabyAnimals.size(); j++) {
+                System.out.println(listOfAnimals.get(i).species + listOfBabyAnimals.get(j).species);
+            }
+        }
+    }
+
     public void setPenName(String penName) {
         this.penName = penName;
     }

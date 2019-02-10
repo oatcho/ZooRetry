@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Zoo extends Pen {
 
     public ArrayList<Pen> zooArray = new ArrayList<>();
+    public Pen tempPen = new Pen();
 
     public Zoo(ArrayList<Animal> listOfAnimals, ArrayList<BabyAnimal> listOfBabyAnimals,String penName, ArrayList<Pen> zooArray) {
         super(listOfAnimals, listOfBabyAnimals, penName);
@@ -44,9 +45,7 @@ public class Zoo extends Pen {
         String penIWantPrinted = key.nextLine();
         for (int i = 0; i < zooArray.size(); i++){
             if (zooArray.get(i).getPenName().equalsIgnoreCase(penIWantPrinted)) {
-                System.out.println(zooArray.get(i).listOfAnimals);
-                System.out.println(zooArray.get(i).listOfBabyAnimals);
-
+                zooArray.get(i).printDetailsInPen2();
             }
         }
     }
@@ -166,29 +165,6 @@ public class Zoo extends Pen {
                     }
                     break;
                 case 2:
-//                    System.out.println("In what Pen does this Baby Animal reside?");
-//                    key.nextLine();
-//                    String penBabyAnimalLivesIn = key.nextLine();
-//                    boolean penFound4 = false;
-//                    for (int i = 0; i < zooArray.size(); i++) {
-//                        if(zooArray.get(i).getPenName().equalsIgnoreCase(penBabyAnimalLivesIn)) {
-//                            penFound4 = true;
-//                            System.out.println("What is the species of Baby Animal would you like to remove?");
-//                            String speciesOfBabyAnimalIWantToRemove = key.nextLine();
-//                            for (int j = 0; j < listOfBabyAnimals.size(); j++) {
-//                                if(listOfBabyAnimals.get(j).getSpecies().equalsIgnoreCase(speciesOfBabyAnimalIWantToRemove)){
-//                                    listOfBabyAnimals.remove(j);
-//                                }
-//                                else {
-//                                    penFound4 = false;
-//                                }
-//                            }
-//                        }
-//                    }
-//                    if (!penFound4) {
-//                        System.out.println("That pen doesn't exist.");
-//                    }
-//                    break;
                     System.out.println("In what Pen does this Baby Animal reside?");
                     key.nextLine();
                     String penBabyAnimalLivesIn = key.nextLine();
