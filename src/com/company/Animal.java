@@ -15,6 +15,15 @@ public class Animal {
 
     }
 
+    @Override
+    public String toString() {
+        return "Animals{" +
+                "species='" + species + '\'' +
+                ", size='" + size + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
+
     public String getSpecies() {
         return species;
     }

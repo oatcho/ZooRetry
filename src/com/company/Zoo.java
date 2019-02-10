@@ -62,18 +62,47 @@ public class Zoo extends Pen {
     }
 
     public void searchForPenAndAddAnimal() {
-        System.out.println("Would you like to Add or Remove an Animal?");
-        System.out.println("1) Add Animal\n 2) Remove Animal");
+        Scanner key = new Scanner(System.in);
+        System.out.println("Would you like to Add or Remove an Animal or a BabyAnimal?");
+        System.out.println("1) Animal\n 2) BabyAnimal");
+        int animalOrBabyAnimal = key.nextInt();
+        if (animalOrBabyAnimal == 1){
+            System.out.println("Would you like to Add or Remove an Animal?\n 1) Add Animal to a Pen \n 2) Remove Animal from Pen");
         int addOrRemoveAnimalOption = key.nextInt();
         switch (addOrRemoveAnimalOption) {
             case 1:
-
+                System.out.println("Please enter the Animal's Species: ");
+                key.nextLine();
+                String species = key.nextLine();
+                System.out.println("How large is the Animal?");
+                String size = key.nextLine();
+                System.out.println("Is this Animal a male or female?");
+                String gender = key.nextLine();
+                Animal newAnimalObject = new Animal(species, size, gender);
+                System.out.println("What's the name of the Pen you would like to add this animal to?");
+                String nameOfPenIWannaAddTo = key.nextLine();
+                boolean penFound = false;
+                for (int i = 0; i < zooArray.size(); i++) {
+                    if (zooArray.get(i).getPenName().equalsIgnoreCase(nameOfPenIWannaAddTo)) {
+                        penFound = true;
+                            listOfAnimals.add(newAnimalObject);
+                        } else {
+                            penFound = false;
+                        }
+                    }
+                if (!penFound) {
+                    System.out.println("That pen doesn't exist.");
+                }
                 break;
             case 2:
                 break;
-            default:
-                break;
+//            default:
+//                break;
+        }
+        } else if(animalOrBabyAnimal == 2){
+            //copy and paste animal stuff
         }
     }
+
 
 }

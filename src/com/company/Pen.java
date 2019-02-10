@@ -28,6 +28,15 @@ public class Pen {
         return penName;
     }
 
+    public void printDetailsInPen(){
+        for (Animal a : listOfAnimals){
+            System.out.println(a);
+        }
+        for (BabyAnimal b : listOfBabyAnimals){
+            System.out.println(b);
+        }
+    }
+
     public void setPenName(String penName) {
         this.penName = penName;
     }
@@ -46,5 +55,9 @@ public class Pen {
 
     public void setListOfBabyAnimals(ArrayList<BabyAnimal> listOfBabyAnimals) {
         this.listOfBabyAnimals = listOfBabyAnimals;
+    }
+
+    public void addAnimalToPen(Animal newAnimal){
+        listOfAnimals.add(newAnimal);
     }
 }

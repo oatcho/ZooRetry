@@ -60,9 +60,10 @@ public class ZooDemo {
 //                        default:
 //                            break;
                     welcomeToZoo.searchForPenAndAddAnimal();
-                    }
+
                     break;
                 case 3:
+                    welcomeToZoo.printDetailsInPen();
                     break;
                 case 4:
                     menuLoop = false;
